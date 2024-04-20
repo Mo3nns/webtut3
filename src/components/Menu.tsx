@@ -13,6 +13,7 @@ import {
   IonTitle,
   IonToggle,
   IonToolbar,
+  IonMenuToggle,
 } from "@ionic/react";
 import {
   bodyOutline,
@@ -37,7 +38,7 @@ function Menu() {
     <IonMenu contentId='main-content'>
       <IonHeader>
         <IonToolbar color='danger'>
-          <IonTitle>WebbieTU</IonTitle>
+          <IonTitle>WebbieT</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className='ion-padding'>
@@ -60,15 +61,20 @@ function Menu() {
           <IonLabel>Content</IonLabel>
         </IonListHeader>
         <IonList>
-          <IonItem routerLink='/home' routerDirection='back'>
-            <IonIcon icon={homeOutline} slot='start'></IonIcon>
-            <IonLabel>Home</IonLabel>
-          </IonItem>
-          <IonItem routerLink='/videos' routerDirection='forward'>
-            <IonIcon icon={tvOutline} slot='start'></IonIcon>
-            <IonLabel>Videos</IonLabel>
-          </IonItem>
-        </IonList>
+  <IonMenuToggle auto-hide="false">
+    <IonItem routerLink='/home' routerDirection='back'>
+      <IonIcon icon={homeOutline} slot='start'></IonIcon>
+      <IonLabel>Home</IonLabel>
+    </IonItem>
+  </IonMenuToggle>
+  <IonMenuToggle auto-hide="false">
+    <IonItem routerLink='/videos' routerDirection='forward'>
+      <IonIcon icon={tvOutline} slot='start'></IonIcon>
+      <IonLabel>Videos</IonLabel>
+    </IonItem>
+  </IonMenuToggle>
+  {/* Repeat for other items that navigate */}
+</IonList>
 
         <IonAccordionGroup>
           <IonAccordion value='first'>
